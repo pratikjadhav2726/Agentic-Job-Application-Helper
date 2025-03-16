@@ -1,0 +1,10 @@
+streamlit==1.32.2
+langchain==0.1.13
+langgraph==0.0.33
+langchain-groq==0.1.4
+langchain-core==0.1.33
+langchain-community==0.0.29
+groq==0.5.0
+pydantic==2.6.4
+python-dotenv==1.0.1
+PyPDF2==3.0.1
