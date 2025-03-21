@@ -19,8 +19,16 @@ class JobRequirements(BaseModel):
     skills: list
     qualifications: str
     experience: str
-
-# Define agent functions
+def extract_resume_skills(state):
+    resume_text = state["resume"]
+    prompt = PromptTemplate.from_template(
+    """Extract the most relevant technical and professional skills from the following resume:
+    {resume}
+    Return the skills as a comma-separated list."""
+    )
+    chain = prompt | llm
+    return chain.invoke({"resume": resume_text}).content
+    # Define agent functions
 def research_job_posting(state):
     url = state["url"]
     prompt = PromptTemplate.from_template(
